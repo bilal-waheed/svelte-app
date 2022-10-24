@@ -8,7 +8,6 @@
 
   let authResponse;
   let publicKey;
-  let stxBalance;
 
   const authenticate = async () => {
     const transitKey = userSession.generateAndStoreTransitKey();
@@ -36,7 +35,6 @@
       await userSession.handlePendingSignIn(authResponse);
       const privateKey = userSession.loadUserData().appPrivateKey;
       publicKey = SECP256K1Client.derivePublicKey(privateKey);
-      // stxBalance = await getBalance(userSession.loadUserData().profile.stxAddress.testnet);
       window.location.reload();
     } catch (e) {
       console.log(e);
@@ -51,8 +49,9 @@
 <main>
   {#if userSession.isUserSignedIn()}
     <button on:click={signout}> Sign out </button>
-    <p>mainnet: {userSession.loadUserData().profile.stxAddress.mainnet}</p>
-    <p>testnet: {userSession.loadUserData().profile.stxAddress.testnet}</p>
+    <p>
+      Testnet Address: {userSession.loadUserData().profile.stxAddress.testnet}
+    </p>
     <br />
     <StxTransfer />
     <Preorder />
