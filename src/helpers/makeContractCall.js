@@ -1,5 +1,6 @@
 import { openContractCall } from "@stacks/connect";
 import { StacksTestnet } from "@stacks/network";
+import { saveUpdatedFile } from "./saveUpdatedFile";
 
 export const makeContractCall = async (
   functionName,
@@ -16,14 +17,8 @@ export const makeContractCall = async (
     functionArgs,
     postConditionMode,
     postConditions,
-    onFinish: (data) => {
-      console.log("onFinish:", data);
-      window
-        .open(
-          `https://explorer.stacks.co/txid/${data.txId}?chain=testnet`,
-          "_blank"
-        )
-        .focus();
+    onFinish: async (data) => {
+      saveUpdatedFile(functionName, data.txId);
     },
     onCancel: () => {
       console.log("onCancel:", "Transaction was canceled");
