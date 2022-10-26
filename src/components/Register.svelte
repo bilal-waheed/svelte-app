@@ -1,24 +1,12 @@
 <script>
-  import { openContractCall } from "@stacks/connect";
-  import { userSession } from "../createUserSession";
-  import { StacksTestnet } from "@stacks/network";
   import {
     hash160,
     bufferCV,
-    uintCV,
-    createSTXPostCondition,
-    parseAssetInfoString,
-    AddressVersion,
-    createStacksPublicKey,
-    FungibleConditionCode,
-    publicKeyToAddress,
     bufferCVFromString,
-    NonFungibleConditionCode,
     PostConditionMode,
   } from "@stacks/transactions";
   import { utf8ToBytes } from "@stacks/common";
-  import { SECP256K1Client } from "jsontokens";
-  import { makeContractCall } from "../makeContractCall.js";
+  import { makeContractCall } from "../helpers/makeContractCall.js";
 
   // register form fields
   let registerBnsName;

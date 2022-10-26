@@ -13,7 +13,7 @@
     PostConditionMode,
   } from "@stacks/transactions";
   import { utf8ToBytes } from "@stacks/common";
-  import { makeContractCall } from "../makeContractCall.js";
+  import { makeContractCall } from "../helpers/makeContractCall.js";
 
   //transfer form field values
   let transferBnsName;

@@ -5,6 +5,7 @@
   import Register from "./Register.svelte";
   import Transfer from "./Transfer.svelte";
   import Preorder from "./Preorder.svelte";
+  import Transactions from "./Transactions.svelte";
 
   let authResponse;
   let publicKey;
@@ -57,6 +58,7 @@
     <Preorder />
     <Register />
     <Transfer />
+    <Transactions />
   {:else}
     <button on:click={authenticate}> Connect Wallet! </button>
   {/if}

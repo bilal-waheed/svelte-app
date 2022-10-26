@@ -5,15 +5,11 @@
     bufferCV,
     uintCV,
     createSTXPostCondition,
-    parseAssetInfoString,
-    AddressVersion,
-    createStacksPublicKey,
     FungibleConditionCode,
     PostConditionMode,
   } from "@stacks/transactions";
   import { utf8ToBytes } from "@stacks/common";
-  import { SECP256K1Client } from "jsontokens";
-  import { makeContractCall } from "../makeContractCall.js";
+  import { makeContractCall } from "../helpers/makeContractCall.js";
 
   // preorder form field values
   let preorderBnsName;
